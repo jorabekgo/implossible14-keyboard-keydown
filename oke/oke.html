@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keydown haqida</title>
+</head>
+<body>
+    <h1>Keyboard keydown</h1>
+    <p id="output">Biron tugmani bosing...</p>
+
+    <script>
+        
+        document.addEventListener('keydown', function(event) {
+           
+            const output = document.getElementById('output');
+
+      
+            output.textContent = `Bosilgan tugma: ${event.key}`;
+
+            switch (event.key) {
+                case 'Enter':
+                    output.textContent = 'Enter tugmasi bosildi!';
+                    break;
+                case 'Escape':
+                    output.textContent = 'Escape tugmasi bosildi!';
+                    break;
+                case 'ArrowUp':
+                    output.textContent = 'Yuqoriga harakat!';
+                    break;
+                case 'ArrowDown':
+                    output.textContent = 'Pastga harakat!';
+                    break;
+                default:
+                    output.textContent = `Bosilgan tugma: ${event.key}`;
+            }
+
+     
+            console.log('Tugmaning kodini:', event.code); 
+            console.log('Tugmani bosish kodini:', event.keyCode); 
+        });
+    </script>
+</body>
+</html>
